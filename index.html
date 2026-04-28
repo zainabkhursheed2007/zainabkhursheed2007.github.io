@@ -11,20 +11,37 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    scroll-behavior: smooth;
-    background: #f4fefe;
+    background: black;
+    color: white;
+    overflow-x: hidden;
 }
 
-h1, h2 {
-    text-align: center;
-    color: #006d6f;
+/* ===== Animated Background ===== */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    animation: move 20s linear infinite;
+}
+
+@keyframes move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-1000px); }
 }
 
 /* ===== Navbar ===== */
 nav {
     position: fixed;
     width: 100%;
-    background: #008b8b;
+    background: rgba(20,20,20,0.9);
     padding: 15px 0;
     top: 0;
     z-index: 1000;
@@ -41,35 +58,40 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ccc;
     text-decoration: none;
-    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: white;
 }
 
 /* ===== Hero ===== */
 .hero {
     height: 100vh;
-    background: linear-gradient(to right, #00b4b4, #66ffff);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    text-align: center;
+    text-align: center;  
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 45px;
 }
 
 .btn {
     margin-top: 20px;
     padding: 12px 25px;
-    background: white;
-    color: #008b8b;
-    border-radius: 25px;
+    border: 1px solid white;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    border-radius: 25px;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
 }
 
 /* ===== Sections ===== */
@@ -77,17 +99,18 @@ section {
     padding: 80px 20px;
 }
 
-/* ===== Flip Cards ===== */
+/* ===== Flip Cards Layout ===== */
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
 }
 
+/* ===== Flip Card ===== */
 .flip-card {
     background: transparent;
-    width: 250px;
     height: 200px;
     perspective: 1000px;
 }
@@ -109,32 +132,28 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    backface-visibility: hidden;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    flex-direction: column;
+    backface-visibility: hidden;
 }
 
 .flip-front {
-    background: #00b4b4;
-    color: white;
+    background: #1a1a1a;
 }
 
 .flip-back {
-    background: #006d6f;
-    color: white;
+    background: #333;
     transform: rotateY(180deg);
 }
 
 .flip-back a {
     margin-top: 10px;
     padding: 8px 15px;
-    background: white;
-    color: #006d6f;
+    border: 1px solid white;
     text-decoration: none;
-    border-radius: 20px;
+    color: white;
 }
 
 /* ===== Timeline ===== */
@@ -144,29 +163,30 @@ section {
 }
 
 .timeline-item {
-    padding: 15px;
-    border-left: 4px solid #00b4b4;
+    border-left: 3px solid white;
+    padding: 10px 20px;
     margin-bottom: 20px;
-    background: #e0ffff;
-}
-
-/* ===== Contact ===== */
-.contact {
-    text-align: center;
 }
 
 /* ===== Footer ===== */
 footer {
-    background: #008b8b;
-    color: white;
     text-align: center;
     padding: 10px;
+    background: #111;
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- Background Animation -->
+<div class="background">
+    <div class="circle" style="width:50px;height:50px;left:10%;animation-duration:25s;"></div>
+    <div class="circle" style="width:30px;height:30px;left:30%;animation-duration:20s;"></div>
+    <div class="circle" style="width:70px;height:70px;left:60%;animation-duration:30s;"></div>
+    <div class="circle" style="width:40px;height:40px;left:80%;animation-duration:22s;"></div>
+</div>
 
 <!-- Navbar -->
 <nav>
@@ -182,19 +202,19 @@ footer {
 <!-- Hero -->
 <section id="home" class="hero">
 <h1>Hi, I am Zainab Khursheed</h1>
-<p>A passionate CS undergraduate at Fatima Jinnah Women University</p>
-<a href="#about" class="btn">View My Portfolio</a>
+<p>CS Undergraduate at Fatima Jinnah Women University</p>
+<a href="#about" class="btn">View Portfolio</a>
 </section>
 
 <!-- About -->
 <section id="about">
 <h2>About Me</h2>
-<p style="text-align:center; max-width:600px; margin:auto;">
-I am a Computer Science student who loves building projects, solving problems, and exploring new technologies.
+<p style="max-width:600px;margin:auto;text-align:center;">
+I am passionate about programming, problem-solving, and building creative projects.
 </p>
 </section>
 
-<!-- Education Timeline -->
+<!-- Education -->
 <section id="education">
 <h2>Education</h2>
 
@@ -206,12 +226,12 @@ I am a Computer Science student who loves building projects, solving problems, a
 
 <div class="timeline-item">
 <h3>College</h3>
-<p>Your College Name</p>
+<p>Your College</p>
 </div>
 
 <div class="timeline-item">
 <h3>School</h3>
-<p>Your School Name</p>
+<p>Your School</p>
 </div>
 </div>
 
@@ -223,39 +243,28 @@ I am a Computer Science student who loves building projects, solving problems, a
 
 <div class="projects-container">
 
-<!-- Card 1 -->
-<div class="flip-card">
-<div class="flip-inner">
-<div class="flip-front">
-<h3>Project 1</h3>
-</div>
-<div class="flip-back">
-<p>Short description</p>
-<a href="https://github.com/yourlink" target="_blank">View Project</a>
-</div>
-</div>
-</div>
+<!-- 6 Cards -->
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 1</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
 
-<!-- Repeat for 6 cards -->
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 2</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 2</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 3</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 3</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 4</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 4</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 5</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 5</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 6</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 6</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
 
 </div>
 
 </section>
 
 <!-- Contact -->
-<section id="contact" class="contact">
+<section id="contact">
 <h2>Contact</h2>
-<p>Email: your@email.com</p>
-<p>GitHub: github.com/yourusername</p>
+<p style="text-align:center;">Email: your@email.com</p>
+<p style="text-align:center;">GitHub: github.com/yourusername</p>
 </section>
 
 <footer>
