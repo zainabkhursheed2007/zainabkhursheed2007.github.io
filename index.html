@@ -175,7 +175,31 @@ section {
     padding: 10px 20px;
     margin-bottom: 20px;
 }
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+/* Optional: make LinkedIn link look like button */
+a[href*="linkedin"] {
+    border: 1px solid white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+a[href*="linkedin"]:hover {
+    box-shadow: 0 0 10px white;
+}
 /* ===== Footer ===== */
 footer {
     text-align: center;
@@ -274,13 +298,9 @@ I enjoy building real-world projects such as web applications and system-based s
 <section id="contact">
 <h2>Contact</h2>
 <p style="text-align:center;">Email: zainabkhursheed2007@gmail.com</p>
-<p style="text-align:center;">
-<a href="https://www.linkedin.com/in/zainab-khursheed-a57221355?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
-style="color:white; text-decoration:none;" 
-target="_blank">
+<p><a href="https://www.linkedin.com/in/zainab-khursheed-a57221355?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
 LinkedIn
-</a>
-</p>
+</a></P>
 <p style="text-align:center;">GitHub: https://github.com/zainabkhursheed2007</p>
 </section>
 
