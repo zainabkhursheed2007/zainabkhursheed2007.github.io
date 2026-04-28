@@ -273,16 +273,6 @@ I am passionate about programming, problem-solving, and building creative projec
 
 <script>
 
-/* ===== Cursor movement effect on name ===== */
-const name = document.getElementById("name");
-
-document.addEventListener("mousemove", (e) => {
-    let x = (window.innerWidth / 2 - e.pageX) / 50;
-    let y = (window.innerHeight / 2 - e.pageY) / 50;
-    name.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-/* ===== Particles Network Animation ===== */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
@@ -291,12 +281,15 @@ canvas.height = window.innerHeight;
 
 let particles = [];
 
-for (let i = 0; i < 80; i++) {
+// 🔥 More particles = more connections
+let particleCount = 120;
+
+for (let i = 0; i < particleCount; i++) {
     particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: Math.random() - 0.5,
-        vy: Math.random() - 0.5
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7
     });
 }
 
@@ -307,8 +300,13 @@ function draw() {
         p.x += p.vx;
         p.y += p.vy;
 
+        // bounce from edges
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        // brighter particles
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
         ctx.fillStyle = "white";
         ctx.fill();
     });
@@ -319,8 +317,10 @@ function draw() {
             let dy = particles[i].y - particles[j].y;
             let dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < 100) {
-                ctx.strokeStyle = "rgba(255,255,255,0.2)";
+            // 🔥 increased distance = more lines
+            if (dist < 130) {
+                ctx.strokeStyle = "rgba(255,255,255,0.35)";
+                ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -334,7 +334,12 @@ function draw() {
 
 draw();
 
-</script>
+// resize fix
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 
+</script>
 </body>
 </html>
