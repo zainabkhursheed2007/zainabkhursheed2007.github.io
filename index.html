@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zainab Portfolio</title>
+
+<style>
+
+/* ===== Global ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* ===== Navbar ===== */
+nav {
+    position: fixed;
+    width: 100%;
+    background: #ff7a00;
+    padding: 15px 0;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #ff7a00, #ffb347);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: white;
+    color: #ff7a00;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.card {
+    background: #fff;
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #ff7a00;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ===== Hero Section ===== -->
+<section id="home" class="hero">
+    <h1>Hi, I am Zainab Khursheed</h1>
+    <p>A passionate CS undergraduate at Fatima Jinnah Women University, eager to build innovative solutions.</p>
+    <a href="#about" class="btn">View My Portfolio</a>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>I am a Computer Science student with strong interest in programming, problem solving, and building real-world projects. I enjoy learning new technologies and improving my skills.</p>
+    </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+        <p>C / C++</p>
+        <p>Python</p>
+        <p>HTML & CSS</p>
+        <p>Prolog</p>
+    </div>
+</section>
+
+<!-- ===== Projects ===== -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+        <p><b>Smart Parking System</b></p>
+        <p>Automated parking solution using sensors and microcontroller.</p>
+    </div>
+    <div class="card">
+        <p><b>Number System Converter</b></p>
+        <p>Converts between binary, decimal, octal, and hexadecimal.</p>
+    </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: your@email.com</p>
+        <p>GitHub: github.com/yourusername</p>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 Zainab Khursheed</p>
+</footer>
+
+</body>
+</html>
