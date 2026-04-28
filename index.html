@@ -10,30 +10,30 @@
 /* ===== Global ===== */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     scroll-behavior: smooth;
+    background: #f4fefe;
 }
 
 h1, h2 {
-    color: #333;
+    text-align: center;
+    color: #006d6f;
 }
 
 /* ===== Navbar ===== */
 nav {
     position: fixed;
     width: 100%;
-    background: #ff7a00;
+    background: #008b8b;
     padding: 15px 0;
     top: 0;
     z-index: 1000;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 nav ul li {
@@ -41,62 +41,123 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     font-weight: bold;
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero ===== */
 .hero {
     height: 100vh;
-    background: linear-gradient(to right, #ff7a00, #ffb347);
+    background: linear-gradient(to right, #00b4b4, #66ffff);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     color: white;
-    flex-direction: column;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 40px;
 }
 
-.hero p {
-    font-size: 18px;
-    max-width: 500px;
-}
-
 .btn {
     margin-top: 20px;
     padding: 12px 25px;
     background: white;
-    color: #ff7a00;
-    border: none;
+    color: #008b8b;
     border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* ===== Sections ===== */
 section {
     padding: 80px 20px;
-    text-align: center;
 }
 
-.card {
-    background: #fff;
-    margin: 15px auto;
-    padding: 20px;
-    max-width: 500px;
+/* ===== Flip Cards ===== */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.flip-card {
+    background: transparent;
+    width: 250px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.flip-front {
+    background: #00b4b4;
+    color: white;
+}
+
+.flip-back {
+    background: #006d6f;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-back a {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: white;
+    color: #006d6f;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+    max-width: 600px;
+    margin: auto;
+}
+
+.timeline-item {
+    padding: 15px;
+    border-left: 4px solid #00b4b4;
+    margin-bottom: 20px;
+    background: #e0ffff;
+}
+
+/* ===== Contact ===== */
+.contact {
+    text-align: center;
 }
 
 /* ===== Footer ===== */
 footer {
-    background: #ff7a00;
+    background: #008b8b;
     color: white;
     text-align: center;
     padding: 10px;
@@ -107,68 +168,98 @@ footer {
 
 <body>
 
-<!-- ===== Navbar ===== -->
+<!-- Navbar -->
 <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
-<!-- ===== Hero Section ===== -->
+<!-- Hero -->
 <section id="home" class="hero">
-    <h1>Hi, I am Zainab Khursheed</h1>
-    <p>A passionate CS undergraduate at Fatima Jinnah Women University, eager to build innovative solutions.</p>
-    <a href="#about" class="btn">View My Portfolio</a>
+<h1>Hi, I am Zainab Khursheed</h1>
+<p>A passionate CS undergraduate at Fatima Jinnah Women University</p>
+<a href="#about" class="btn">View My Portfolio</a>
 </section>
 
-<!-- ===== About ===== -->
+<!-- About -->
 <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>I am a Computer Science student with strong interest in programming, problem solving, and building real-world projects. I enjoy learning new technologies and improving my skills.</p>
-    </div>
+<h2>About Me</h2>
+<p style="text-align:center; max-width:600px; margin:auto;">
+I am a Computer Science student who loves building projects, solving problems, and exploring new technologies.
+</p>
 </section>
 
-<!-- ===== Skills ===== -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-        <p>C / C++</p>
-        <p>Python</p>
-        <p>HTML & CSS</p>
-        <p>Prolog</p>
-    </div>
+<!-- Education Timeline -->
+<section id="education">
+<h2>Education</h2>
+
+<div class="timeline">
+<div class="timeline-item">
+<h3>University</h3>
+<p>Fatima Jinnah Women University</p>
+</div>
+
+<div class="timeline-item">
+<h3>College</h3>
+<p>Your College Name</p>
+</div>
+
+<div class="timeline-item">
+<h3>School</h3>
+<p>Your School Name</p>
+</div>
+</div>
+
 </section>
 
-<!-- ===== Projects ===== -->
+<!-- Projects -->
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-        <p><b>Smart Parking System</b></p>
-        <p>Automated parking solution using sensors and microcontroller.</p>
-    </div>
-    <div class="card">
-        <p><b>Number System Converter</b></p>
-        <p>Converts between binary, decimal, octal, and hexadecimal.</p>
-    </div>
+<h2>Projects</h2>
+
+<div class="projects-container">
+
+<!-- Card 1 -->
+<div class="flip-card">
+<div class="flip-inner">
+<div class="flip-front">
+<h3>Project 1</h3>
+</div>
+<div class="flip-back">
+<p>Short description</p>
+<a href="https://github.com/yourlink" target="_blank">View Project</a>
+</div>
+</div>
+</div>
+
+<!-- Repeat for 6 cards -->
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 2</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 3</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 4</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 5</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 6</h3></div><div class="flip-back"><p>Short description</p><a href="#">View Project</a></div></div></div>
+
+</div>
+
 </section>
 
-<!-- ===== Contact ===== -->
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: your@email.com</p>
-        <p>GitHub: github.com/yourusername</p>
-    </div>
+<!-- Contact -->
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>Email: your@email.com</p>
+<p>GitHub: github.com/yourusername</p>
 </section>
 
-<!-- ===== Footer ===== -->
 <footer>
-    <p>© 2026 Zainab Khursheed</p>
+<p>© 2026 Zainab Khursheed</p>
 </footer>
 
 </body>
