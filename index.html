@@ -214,6 +214,13 @@ footer {
 <h2>About Me</h2>
 <p style="text-align:center;max-width:600px;margin:auto;">
 I am passionate about programming, problem-solving, and building creative projects.
+I enjoy turning ideas into functional and creative solutions through code.
+<br><br>
+
+I have a strong interest in <b>software development, problem-solving, and system design</b>, and I continuously work on improving my skills in programming and modern technologies.
+<br><br>
+
+I enjoy building real-world projects such as web applications and system-based solutions that strengthen my logical thinking and technical abilities. My goal is to grow as a developer and contribute to impactful tech solutions in the future.
 </p>
 </section>
 
@@ -227,6 +234,9 @@ I am passionate about programming, problem-solving, and building creative projec
 <div class="skill">CSS</div>
 <div class="skill">Prolog</div>
 <div class="skill">JavaScript</div>
+<div class="skill">Assembly Language</div>
+<div class="skill">Canva (UI design)</div>
+<div class="skill">Fluent in English</div>
 </div>
 </section>
 
@@ -234,9 +244,9 @@ I am passionate about programming, problem-solving, and building creative projec
 <section id="education">
 <h2>Education</h2>
 <div class="timeline">
-<div class="timeline-item"><h3>University</h3><p>Fatima Jinnah Women University</p></div>
-<div class="timeline-item"><h3>College</h3><p>Your College</p></div>
-<div class="timeline-item"><h3>School</h3><p>Your School</p></div>
+<div class="timeline-item"><h3>Bachelor of Computer Science</h3><p>Fatima Jinnah Women University</p><p>2024 - Present</p></div>
+<div class="timeline-item"><h3>ICS Physics</h3><p>Punjab Group of Colleges</p><p>2022-2024 Completed</p></div>
+<div class="timeline-item"><h3>Matric - Science</h3><p>Army Public School</p><p>2020-2022Completed</p></div>
 </div>
 </section>
 
@@ -245,17 +255,17 @@ I am passionate about programming, problem-solving, and building creative projec
 <h2>Projects</h2>
 <div class="projects-container">
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 1</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>NumConvert</h3></div><div class="flip-back"><p>Number system coverting app developed using c++ and assembly 8086</p><a href="https://github.com/zainabkhursheed2007/Number_systemConvertingApp">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 2</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Heap Insertion App</h3></div><div class="flip-back"><p>Heap Insertion app developed using c++ </p><a href="https://github.com/zainabkhursheed2007/HeapInsertion_App">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 3</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>AMS</h3></div><div class="flip-back"><p>Online Academy Management System developed using java(oop) and dbsms</p><a href="https://github.com/zainabkhursheed2007/Online_Academy_Management_System">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 4</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Digital Magazine</h3></div><div class="flip-back"><p>Digital Magazine designed by using Canva</p><a href="https://github.com/zainabkhursheed2007/Digital_Magazine/blob/main/ict_magazine.pdf">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 5</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>NeuroMath</h3></div><div class="flip-back"><p>Maths Problem Game developed using C </p><a href="https://github.com/zainabkhursheed2007/Math-Problem-Game-">View Project</a></div></div></div>
 
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Project 6</h3></div><div class="flip-back"><p>Details</p><a href="#">View Project</a></div></div></div>
+<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Pet Feeder</h3></div><div class="flip-back"><p>Iot based Project built ESP32 microcontroller and a built-in web server </p><a href="https://github.com/zainabkhursheed2007/Iot_based_Pet_Feeder/blob/main/image.png">View Project</a></div></div></div>
 
 </div>
 </section>
@@ -263,8 +273,8 @@ I am passionate about programming, problem-solving, and building creative projec
 <!-- Contact -->
 <section id="contact">
 <h2>Contact</h2>
-<p style="text-align:center;">Email: your@email.com</p>
-<p style="text-align:center;">GitHub: github.com/yourusername</p>
+<p style="text-align:center;">Email: zainabkhursheed2007@gmail.com</p>
+<p style="text-align:center;">GitHub: https://github.com/zainabkhursheed2007</p>
 </section>
 
 <footer>
@@ -273,6 +283,16 @@ I am passionate about programming, problem-solving, and building creative projec
 
 <script>
 
+/* ===== Cursor movement effect on name ===== */
+const name = document.getElementById("name");
+
+document.addEventListener("mousemove", (e) => {
+    let x = (window.innerWidth / 2 - e.pageX) / 50;
+    let y = (window.innerHeight / 2 - e.pageY) / 50;
+    name.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+/* ===== Particles Network Animation ===== */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
@@ -281,15 +301,12 @@ canvas.height = window.innerHeight;
 
 let particles = [];
 
-// 🔥 More particles = more connections
-let particleCount = 120;
-
-for (let i = 0; i < particleCount; i++) {
+for (let i = 0; i < 80; i++) {
     particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.7,
-        vy: (Math.random() - 0.5) * 0.7
+        vx: Math.random() - 0.5,
+        vy: Math.random() - 0.5
     });
 }
 
@@ -300,13 +317,8 @@ function draw() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // bounce from edges
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-        // brighter particles
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
         ctx.fillStyle = "white";
         ctx.fill();
     });
@@ -317,10 +329,8 @@ function draw() {
             let dy = particles[i].y - particles[j].y;
             let dist = Math.sqrt(dx * dx + dy * dy);
 
-            // 🔥 increased distance = more lines
-            if (dist < 130) {
-                ctx.strokeStyle = "rgba(255,255,255,0.35)";
-                ctx.lineWidth = 1;
+            if (dist < 100) {
+                ctx.strokeStyle = "rgba(255,255,255,0.2)";
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -333,12 +343,6 @@ function draw() {
 }
 
 draw();
-
-// resize fix
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
 
 </script>
 </body>
