@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zainab Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zainab Khursheed | AI Automation Developer</title>
 
 <style>
-
-/* ===== Global ===== */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: 'Segoe UI', sans-serif;
-    background: black;
-    color: white;
+    background: #050505;
+    color: #ffffff;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-h2 {
-    text-align: center;
-}
-
-/* ===== Canvas Background ===== */
 #particles {
     position: fixed;
     width: 100%;
@@ -28,194 +31,340 @@ h2 {
     z-index: -1;
 }
 
-/* ===== Navbar ===== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    padding: 90px 8%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 45px;
+}
+
+.highlight {
+    color: #00e5ff;
+}
+
+/* Navbar */
 nav {
     position: fixed;
     width: 100%;
-    background: rgba(20,20,20,0.9);
-    padding: 15px 0;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 16px;
+    gap: 28px;
 }
 
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
+nav a {
     color: #ccc;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    color: white;
-}
-
-/* ===== Hero ===== */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#name {
-    font-size: 45px;
-    transition: transform 0.2s ease;
-}
-
-/* ===== Glow Button ===== */
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: 1px solid white;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
-.btn:hover {
-    box-shadow: 0 0 15px white, 0 0 30px white;
-    background: white;
-    color: black;
+nav a:hover {
+    color: #00e5ff;
 }
 
-/* ===== Sections ===== */
-section {
-    padding: 80px 20px;
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 90px;
 }
 
-/* ===== Skills ===== */
-.skills {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+.hero-content {
+    max-width: 850px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid rgba(0,229,255,0.5);
+    color: #00e5ff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background: rgba(0,229,255,0.08);
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #cfcfcf;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
     gap: 15px;
-    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 26px;
+    border-radius: 30px;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: #00e5ff;
+    color: #000;
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,229,255,0.45);
+}
+
+/* About */
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 18px;
+    color: #ddd;
+    text-align: justify;
+}
+
+/* Stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #00e5ff;
+    font-size: 34px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 950px;
     margin: auto;
 }
 
 .skill {
-    padding: 10px 20px;
-    border: 1px solid white;
-    border-radius: 20px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+    background: rgba(255,255,255,0.05);
+    color: #ddd;
     transition: 0.3s;
 }
 
 .skill:hover {
-    box-shadow: 0 0 10px white;
+    color: #00e5ff;
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0,229,255,0.25);
 }
 
-/* ===== Projects Grid ===== */
+/* Projects */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 900px;
+    gap: 26px;
+    max-width: 1150px;
     margin: auto;
 }
 
-.flip-card {
-    height: 200px;
-    perspective: 1000px;
+.project-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.3s;
+    min-height: 300px;
 }
 
-.flip-inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow: 0 0 30px rgba(0,229,255,0.18);
 }
 
-.flip-card:hover .flip-inner {
-    transform: rotateY(180deg);
+.project-card h3 {
+    color: #00e5ff;
+    margin-bottom: 12px;
 }
 
-.flip-front, .flip-back {
-    position: absolute;
-    width: 100%;
-    height: 200px;
+.project-card p {
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+.tags {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    backface-visibility: hidden;
-    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
 }
 
-.flip-front {
-    background: #1a1a1a;
+.tags span {
+    font-size: 12px;
+    padding: 5px 10px;
+    background: rgba(0,229,255,0.1);
+    border-radius: 20px;
+    color: #00e5ff;
 }
 
-.flip-back {
-    background: #333;
-    transform: rotateY(180deg);
+.project-card a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 9px 16px;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
-.flip-back a {
-    margin-top: 10px;
-    padding: 8px 15px;
-    border: 1px solid white;
-    color: white;
-    text-decoration: none;
+.project-card a:hover {
+    background: #00e5ff;
+    color: #000;
 }
 
-/* ===== Timeline ===== */
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+}
+
+.service-card h3 {
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+/* Education */
 .timeline {
-    max-width: 600px;
+    max-width: 750px;
     margin: auto;
 }
 
 .timeline-item {
-    border-left: 3px solid white;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-}
-a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+    border-left: 3px solid #00e5ff;
+    padding: 12px 25px;
+    margin-bottom: 25px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 0 14px 14px 0;
 }
 
-a:visited {
-    color: white;
+.timeline-item h3 {
+    color: #00e5ff;
 }
 
-a:hover {
-    color: #ccc;
+/* Contact */
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 35px;
+    border-radius: 18px;
 }
 
-/* Optional: make LinkedIn link look like button */
-a[href*="linkedin"] {
-    border: 1px solid white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    display: inline-block;
+.contact-box p {
+    margin: 15px 0;
 }
 
-a[href*="linkedin"]:hover {
-    box-shadow: 0 0 10px white;
+.contact-box a {
+    color: #00e5ff;
 }
-/* ===== Footer ===== */
+
 footer {
     text-align: center;
-    padding: 10px;
-    background: #111;
-}
-#contact a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+    padding: 18px;
+    background: #080808;
+    color: #aaa;
 }
 
-#contact a:hover {
-    color: #ccc;
-    text-shadow: 0 0 8px white;
+/* Responsive */
+@media (max-width: 900px) {
+    .projects-container,
+    .services,
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .projects-container,
+    .services,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
 }
 </style>
 </head>
@@ -224,139 +373,224 @@ footer {
 
 <canvas id="particles"></canvas>
 
-<!-- Navbar -->
 <nav>
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="#education">Education</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#education">Education</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
-<!-- Hero -->
 <section id="home" class="hero">
-<h1 id="name">Hi, I am Zainab Khursheed</h1>
-<p>CS Undergraduate at Fatima Jinnah Women University</p>
-<a href="#about" class="btn">View Portfolio</a>
-</section>
-
-<!-- About -->
-<section id="about">
-<h2>About Me</h2>
-<p style="text-align:justify;max-width:600px;margin:auto;">
-I am passionate about programming, problem-solving, and building creative projects.
-I enjoy turning ideas into functional and creative solutions through code.
-<br><br>
-
-I have a strong interest in <b>software development, problem-solving, and system design</b>, and I continuously work on improving my skills in programming and modern technologies.
-<br><br>
-
-I enjoy building real-world projects such as web applications and system-based solutions that strengthen my logical thinking and technical abilities. My goal is to grow as a developer and contribute to impactful tech solutions in the future.
-</p>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-<h2>Skills</h2>
-<div class="skills">
-<div class="skill">C++</div>
-<div class="skill">Python</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">Prolog</div>
-<div class="skill">JavaScript</div>
-<div class="skill">C Programming</div>
-<div class="skill">Assembly Language</div>
-<div class="skill">Canva (UI design)</div>
-<div class="skill">Fluent in English</div>
+<div class="hero-content">
+    <span class="badge">AI Automation Developer</span>
+    <h1>Hi, I'm <span class="highlight">Zainab Khursheed</span></h1>
+    <p>
+        I build AI-powered workflows and automation systems that help businesses
+        save time, reduce manual work, and improve productivity.
+    </p>
+    <div class="buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
 </div>
 </section>
 
-<!-- Education -->
+<section id="about">
+<h2>About Me</h2>
+<div class="about-box">
+    <p>
+        I am a Computer Science undergraduate at Fatima Jinnah Women University with a growing focus on
+        AI automation, workflow development, and real-world business solutions.
+        <br><br>
+        I enjoy building systems that connect tools like n8n, Groq AI, Gmail, Airtable, Google Sheets,
+        Slack, and APIs to automate repetitive business tasks. My goal is to create practical AI-powered
+        solutions that solve real problems for businesses.
+    </p>
+</div>
+</section>
+
+<section>
+<h2>Quick Highlights</h2>
+<div class="stats">
+    <div class="stat-card"><h3>10+</h3><p>Projects Built</p></div>
+    <div class="stat-card"><h3>7+</h3><p>Tools Integrated</p></div>
+    <div class="stat-card"><h3>5+</h3><p>AI Workflows</p></div>
+    <div class="stat-card"><h3>100+</h3><p>Hours Learning</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills & Tools</h2>
+<div class="skills">
+    <div class="skill">n8n</div>
+    <div class="skill">Groq AI</div>
+    <div class="skill">Airtable</div>
+    <div class="skill">Google Sheets</div>
+    <div class="skill">Gmail Automation</div>
+    <div class="skill">Slack</div>
+    <div class="skill">Google Calendar</div>
+    <div class="skill">REST APIs</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Python</div>
+    <div class="skill">C++</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">C Programming</div>
+    <div class="skill">Assembly Language</div>
+    <div class="skill">Canva UI Design</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Featured Projects</h2>
+<div class="projects-container">
+
+<div class="project-card">
+    <h3>SmartHire AI</h3>
+    <p>
+        AI-powered recruitment automation system that analyzes resumes, scores candidates,
+        schedules interviews, sends emails, and stores HR data.
+    </p>
+    <div class="tags">
+        <span>n8n</span><span>Groq AI</span><span>Airtable</span><span>Gmail</span><span>Slack</span>
+    </div>
+    <a href="#" target="_blank">Coming Soon</a>
+</div>
+
+<div class="project-card">
+    <h3>AI Feedback Analyzer</h3>
+    <p>
+        Multi-tool feedback automation that summarizes customer feedback, detects sentiment,
+        stores records, and sends automated replies.
+    </p>
+    <div class="tags">
+        <span>Webhook</span><span>Groq</span><span>Sheets</span><span>Airtable</span>
+    </div>
+    <a href="#" target="_blank">Coming Soon</a>
+</div>
+
+<div class="project-card">
+    <h3>AI Blog Generator</h3>
+    <p>
+        Automated blog generation workflow that creates blog content, meta descriptions,
+        hashtags, stores data, and emails the generated blog.
+    </p>
+    <div class="tags">
+        <span>n8n</span><span>OpenRouter</span><span>Gmail</span><span>Sheets</span>
+    </div>
+    <a href="#" target="_blank">Coming Soon</a>
+</div>
+
+<div class="project-card">
+    <h3>NumConvert</h3>
+    <p>Number system converting app developed using C++ and Assembly 8086.</p>
+    <div class="tags"><span>C++</span><span>Assembly</span></div>
+    <a href="https://github.com/zainabkhursheed2007/Number_systemConvertingApp" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+    <h3>Academy Management System</h3>
+    <p>Online Academy Management System developed using Java OOP and database concepts.</p>
+    <div class="tags"><span>Java</span><span>OOP</span><span>DBMS</span></div>
+    <a href="https://github.com/zainabkhursheed2007/Online_Academy_Management_System" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+    <h3>IoT Pet Feeder</h3>
+    <p>IoT-based pet feeder built using ESP32 microcontroller and a built-in web server.</p>
+    <div class="tags"><span>IoT</span><span>ESP32</span><span>Web Server</span></div>
+    <a href="https://github.com/zainabkhursheed2007/Iot_based_Pet_Feeder/blob/main/image.png" target="_blank">View Project</a>
+</div>
+
+</div>
+</section>
+
+<section id="services">
+<h2>What I Can Build</h2>
+<div class="services">
+    <div class="service-card">
+        <h3>AI Automation</h3>
+        <p>Automated workflows using AI tools and business apps.</p>
+    </div>
+    <div class="service-card">
+        <h3>Workflow Development</h3>
+        <p>n8n workflows for emails, forms, sheets, CRMs, and APIs.</p>
+    </div>
+    <div class="service-card">
+        <h3>AI Assistants</h3>
+        <p>Chatbots and assistants for support, HR, and operations.</p>
+    </div>
+    <div class="service-card">
+        <h3>Web Projects</h3>
+        <p>Responsive websites and student-level software projects.</p>
+    </div>
+</div>
+</section>
+
 <section id="education">
 <h2>Education</h2>
 <div class="timeline">
-<div class="timeline-item"><h3>Bachelor of Computer Science</h3><p>Fatima Jinnah Women University</p><p>2024 - Present</p></div>
-<div class="timeline-item"><h3>ICS Physics</h3><p>Punjab Group of Colleges</p><p>2022-2024</p><p>Completed</p></div>
-<div class="timeline-item"><h3>Matric - Science</h3><p>Army Public School</p><p>2020-2022</p><p>Completed</p></div>
+    <div class="timeline-item">
+        <h3>Bachelor of Computer Science</h3>
+        <p>Fatima Jinnah Women University</p>
+        <p>2024 - Present</p>
+    </div>
+    <div class="timeline-item">
+        <h3>ICS Physics</h3>
+        <p>Punjab Group of Colleges</p>
+        <p>2022 - 2024</p>
+    </div>
+    <div class="timeline-item">
+        <h3>Matric - Science</h3>
+        <p>Army Public School</p>
+        <p>2020 - 2022</p>
+    </div>
 </div>
 </section>
 
-<!-- Projects -->
-<section id="projects">
-<h2>Projects</h2>
-<div class="projects-container">
-
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>NumConvert</h3></div><div class="flip-back"><p>Number system coverting app developed using c++ and assembly 8086</p><a href="https://github.com/zainabkhursheed2007/Number_systemConvertingApp">View Project</a></div></div></div>
-
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Heap Insertion App</h3></div><div class="flip-back"><p>Heap Insertion app developed using c++ </p><a href="https://github.com/zainabkhursheed2007/HeapInsertion_App">View Project</a></div></div></div>
-
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>AMS</h3></div><div class="flip-back"><p>Online Academy Management System developed using java(oop) and dbsms</p><a href="https://github.com/zainabkhursheed2007/Online_Academy_Management_System">View Project</a></div></div></div>
-
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Digital Magazine</h3></div><div class="flip-back"><p>Digital Magazine designed by using Canva</p><a href="https://github.com/zainabkhursheed2007/Digital_Magazine/blob/main/ict_magazine.pdf">View Project</a></div></div></div>
-
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>NeuroMath</h3></div><div class="flip-back"><p>Maths Problem Game developed using C </p><a href="https://github.com/zainabkhursheed2007/Math-Problem-Game-">View Project</a></div></div></div>
-
-<div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Pet Feeder</h3></div><div class="flip-back"><p>Iot based Project built ESP32 microcontroller and a built-in web server </p><a href="https://github.com/zainabkhursheed2007/Iot_based_Pet_Feeder/blob/main/image.png">View Project</a></div></div></div>
-
-</div>
-</section>
-
-<!-- Contact -->
 <section id="contact">
-<h2>Contact</h2>
-
-<p style="text-align:center;">
-    Email: <a href="mailto:zainabkhursheed2007@gmail.com">zainabkhursheed2007@gmail.com</a>
-</p>
-
-<p style="text-align:center;">
-    GitHub: <a href="https://github.com/zainabkhursheed2007" target="_blank">github.com/zainabkhursheed2007</a>
-</p>
-
-<p style="text-align:center;">
-    <a href="https://www.linkedin.com/in/zainab-khursheed-a57221355?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
-        LinkedIn
-    </a>
-</p>
-
+<h2>Contact Me</h2>
+<div class="contact-box">
+    <p>Email: <a href="mailto:zainabkhursheed2007@gmail.com">zainabkhursheed2007@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/zainabkhursheed2007" target="_blank">github.com/zainabkhursheed2007</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/zainab-khursheed-a57221355" target="_blank">Connect on LinkedIn</a></p>
+</div>
 </section>
 
 <footer>
-<p>© 2026 Zainab Khursheed</p>
+<p>© 2026 Zainab Khursheed | AI Automation Developer</p>
 </footer>
 
 <script>
-
-/* ===== Cursor movement effect on name ===== */
-const name = document.getElementById("name");
-
-document.addEventListener("mousemove", (e) => {
-    let x = (window.innerWidth / 2 - e.pageX) / 50;
-    let y = (window.innerHeight / 2 - e.pageY) / 50;
-    name.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-/* ===== Particles Network Animation ===== */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
 
 let particles = [];
 
-for (let i = 0; i < 80; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: Math.random() - 0.5,
-        vy: Math.random() - 0.5
-    });
+function createParticles() {
+    particles = [];
+    for (let i = 0; i < 90; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.7,
+            vy: (Math.random() - 0.5) * 0.7
+        });
+    }
 }
+
+createParticles();
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -365,9 +599,12 @@ function draw() {
         p.x += p.vx;
         p.y += p.vy;
 
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "#00e5ff";
         ctx.fill();
     });
 
@@ -377,8 +614,9 @@ function draw() {
             let dy = particles[i].y - particles[j].y;
             let dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < 100) {
-                ctx.strokeStyle = "rgba(255,255,255,0.2)";
+            if (dist < 120) {
+                ctx.strokeStyle = `rgba(0,229,255,${1 - dist / 120})`;
+                ctx.lineWidth = 0.4;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -392,6 +630,11 @@ function draw() {
 
 draw();
 
+window.addEventListener("resize", () => {
+    resizeCanvas();
+    createParticles();
+});
 </script>
+
 </body>
 </html>
